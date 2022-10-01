@@ -1,0 +1,102 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+
+
+.lines {
+    background-color: rgb(255, 183, 0);
+    width: 100%;
+    height: .25rem;
+    border-radius: 10px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.hero-img {
+    width: 100%;
+}
+
+body {
+    background-color: #eadfb8;
+    font-family: Poppins, sans-serif;
+}
+
+.navs {
+    color: black;
+    transition: 0.15s;
+    text-decoration: underline;
+    font-weight: 100;
+}
+
+.navs:hover {
+    color: white;
+    transform: scale(1.025);
+
+}
+
+.navs:active {
+    transform: scale(1);
+    color: black;
+}
+
+.custom-btn {
+    transition: 0.15s;
+    width: 7rem;
+    color: black;
+    background-color: rgb(255, 183, 0);
+    text-decoration: none;
+
+
+}
+
+.custom-btn:hover {
+    transform: scale(1.05);
+    background-color: white;
+    color: black;
+    box-shadow: 10px 10px rgb(255, 183, 0);
+
+}
+
+.custom-btn:active {
+    transform: scale(1);
+    background-color: rgb(255, 183, 0);
+    color: black;
+}
+
+@media device-width(768) {
+    .hero-img {
+        display: none;
+    }
+}
+
+.col-md-6 {
+    width: 50%;
+
+}
+
+@media only screen and (max-width: 1400px) {
+
+    .col-md-6 {
+        width: 100%;
+
+    }
+
+    .hero-img {
+        display: none;
+    }
+
+}
