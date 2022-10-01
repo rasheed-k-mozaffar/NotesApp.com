@@ -1,4 +1,4 @@
-namespace NotesApp
+namespace NotesApp.Repos
 {
     public interface INoteRepository
     {
