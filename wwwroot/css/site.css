@@ -88,6 +88,52 @@ body {
 
 }
 
+.normal-input {
+    width: 80%;
+    display: block;
+    height: 2rem;
+    border: none;
+    border-bottom: .5px solid black;
+    padding: 1rem;
+    padding-left: 0;
+    margin-bottom: 1rem;
+    margin-top: .5rem;
+    background-color: transparent;
+    transition: 0.15s ease;
+}
+.normal-input:focus {
+    outline: none !important;
+    
+    border-bottom: 5px solid rgb(255, 183, 0);
+}
+
+.content-input {
+    width: 100ch;
+    display: block;
+    height: 10rem;
+    border: .5px solid black;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    margin-top: .5rem;
+    border-radius: 1px;
+    background-color: transparent;
+    transition: 0.15s ease;
+    
+}
+.content-input:focus {
+    outline: none !important;
+    background-color: white;
+    border: 2.5px solid rgb(255, 183, 0);
+
+}
+
+.custom-select {
+    width: 20%;
+    
+}
+
+
+
 @media only screen and (max-width: 1400px) {
 
     .col-md-6 {

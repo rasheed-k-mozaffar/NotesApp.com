@@ -12,7 +12,7 @@ using NotesApp.Data;
 namespace NotesApp.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20221002063313_Initial")]
+    [Migration("20221002193644_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -31,11 +31,9 @@ namespace NotesApp.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Content")
+                        .IsRequired()
                         .HasMaxLength(5000)
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("NumOfWords")
-                        .HasColumnType("int");
 
                     b.Property<string>("Title")
                         .IsRequired()

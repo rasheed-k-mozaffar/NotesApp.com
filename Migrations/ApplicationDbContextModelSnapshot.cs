@@ -29,11 +29,9 @@ namespace NotesApp.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Content")
+                        .IsRequired()
                         .HasMaxLength(5000)
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("NumOfWords")
-                        .HasColumnType("int");
 
                     b.Property<string>("Title")
                         .IsRequired()

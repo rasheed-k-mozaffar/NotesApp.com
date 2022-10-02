@@ -16,13 +16,13 @@
         </div>
     </div>
 
-    <table class="table table-bordered-light table-transparent">
+    <table class="table">
         <thead>
             <tr>
-                <th class="text-start" width="30%">Note ID</th>
+                
                 <th width="30%">Note Title</th>
-                <th width="20%">Total Words</th>
-                <th class="text-end" width="20%">Actions</th>
+                <th width="10%" class="text-center">Total Words</th>
+                <th class="text-end" width="40%">Actions</th>
             </tr>
         </thead>
 
@@ -30,12 +30,14 @@
             @foreach(var note in Model)
             {
                 <tr>
-                    <td>@note.Id</td>
+                    
                     <td>@note.Title</td>
-                    <td>@note.CalcLength().ToString()</td>
-                    <td>
-                        <a asp-action="View" asp-controller="Notes" class="btn btn-warning">View</a>
-                        <a asp-action="Edit" asp-controller="Notes" class="btn btn-primary">Edit</a>
+                    <td class="text-center">
+                        @note.CalcLength().ToString()
+                    </td>
+                    <td class="text-end">
+                        <a asp-action="View" asp-controller="Notes" class="btn btn-light"><i class="bi bi-folder2-open"></i>&nbsp;View Note</a>
+                        <a asp-action="Edit" asp-controller="Notes" class="btn btn-light"><i class="bi bi-pen"></i>&nbsp;Edit Note</a>
                     </td>
                 </tr>
              }

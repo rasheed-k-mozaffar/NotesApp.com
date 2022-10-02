@@ -33,7 +33,7 @@ namespace NotesApp.Controllers
         [HttpPost]
         public IActionResult Add(Note note)
         {
-            if(note != null && ModelState.IsValid)
+            if(ModelState.IsValid)
             {
                 _repository.AddNewNote(note);
                 return RedirectToAction("index");

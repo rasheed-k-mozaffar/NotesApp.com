@@ -13,6 +13,7 @@ namespace NotesApp.Models
 
         public void AddNewNote(Note note)
         {
+            note.CalcLength();
             _context.Notes.Add(note);
             _context.SaveChanges();
         }

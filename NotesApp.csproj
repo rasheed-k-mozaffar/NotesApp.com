@@ -43,5 +43,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\images\" />
+    <Content Remove="Views\Home\Add.cshtml" />
   </ItemGroup>
 </Project>
