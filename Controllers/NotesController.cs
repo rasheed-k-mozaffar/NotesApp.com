@@ -23,6 +23,26 @@ namespace NotesApp.Controllers
             List<Note> allNotes = _repository.DisplayAllNotes().ToList();
             return View(allNotes);
         }
+
+        [HttpGet]
+        public IActionResult Add()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Add(Note note)
+        {
+            if(note != null && ModelState.IsValid)
+            {
+                _repository.AddNewNote(note);
+                return RedirectToAction("index");
+            }
+
+            return View();
+        }
+
+
     }
 }
 
