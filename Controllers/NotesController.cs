@@ -10,10 +10,18 @@ namespace NotesApp.Controllers
 {
     public class NotesController : Controller
     {
+        private INoteRepository _repository;
+        public NotesController(INoteRepository repository)
+        {
+            _repository = repository;
+        }
+
         // GET: /<controller>/
+        [HttpGet]
         public IActionResult Index()
         {
-            return View();
+            List<Note> allNotes = _repository.DisplayAllNotes().ToList();
+            return View(allNotes);
         }
     }
 }

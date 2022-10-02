@@ -13,8 +13,12 @@ namespace NotesApp.Models
 
         [MaxLength(5000)]
         public string? Content { get; set; } = string.Empty;
-        //[DisplayColumn()]
+
+        [MaxLength(50)]
+        public string TitleColor { get; set; } = "black";
+        
         public int NumOfWords { get; set; } = 0;
+
 
         public int CalcLength() => Content.Split(" ").Length;
         

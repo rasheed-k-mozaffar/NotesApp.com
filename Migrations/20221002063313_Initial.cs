@@ -16,6 +16,7 @@ namespace NotesApp.Migrations
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Title = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     Content = table.Column<string>(type: "nvarchar(max)", maxLength: 5000, nullable: true),
+                    TitleColor = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     NumOfWords = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>

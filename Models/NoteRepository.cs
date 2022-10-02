@@ -13,17 +13,19 @@ namespace NotesApp.Models
 
         public void AddNewNote(Note note)
         {
-            throw new NotImplementedException();
+            _context.Notes.Add(note);
+            _context.SaveChanges();
         }
 
         public IEnumerable<Note> DisplayAllNotes()
         {
-            throw new NotImplementedException();
+            return _context.Notes;
         }
 
         public Note FindById(Guid id)
         {
-            throw new NotImplementedException();
+            Note returnedNote = _context.Notes.Find(id);
+            return returnedNote;
         }
     }
 }

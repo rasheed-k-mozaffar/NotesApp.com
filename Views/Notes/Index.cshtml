@@ -1,7 +1,45 @@
-﻿@*
+﻿@model IEnumerable<Note>
+@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
 }
+<br /> 
+<div class="container">
+    <div class="row mt-4 pb-3 p-2">
+        <div class="col-6">
+            <h2>All Notes</h2>
+        </div>
 
-<h1>All Notes</h1>
+        <div class="col-6 text-end">
+            <a class="custom-btn btn" asp-action="Add" asp-controller="Notes">Add New Note</a>
+        </div>
+    </div>
+
+    <table class="table table-bordered-light table-transparent">
+        <thead>
+            <tr>
+                <th class="text-start" width="30%">Note ID</th>
+                <th width="30%">Note Title</th>
+                <th width="20%">Total Words</th>
+                <th class="text-end" width="20%">Actions</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach(var note in Model)
+            {
+                <tr>
+                    <td>@note.Id</td>
+                    <td>@note.Title</td>
+                    <td>@note.CalcLength().ToString()</td>
+                    <td>
+                        <a asp-action="View" asp-controller="Notes" class="btn btn-warning">View</a>
+                        <a asp-action="Edit" asp-controller="Notes" class="btn btn-primary">Edit</a>
+                    </td>
+                </tr>
+             }
+        </tbody>
+    </table>
+
+</div>
