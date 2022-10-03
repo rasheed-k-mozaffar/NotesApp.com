@@ -77,10 +77,32 @@ body {
     color: black;
 }
 
-@media device-width(768) {
-    .hero-img {
-        display: none;
-    }
+
+.color-tag {
+    width: 4%;
+    height: 100%;
+    background-color: crimson;
+    margin-left: .5rem;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.note-info {
+    font-weight: 400;
+}
+
+.card {
+    height: 4rem;
+    margin: auto;
+    padding: 20px 15px;
+    width: 100%;
+    margin-bottom: 1rem;
+    transition: .2s ease;
+}
+.card:hover {
+    transform: scale(1.015);
+    background-color: #eee;
+    
 }
 
 .col-md-6 {
@@ -129,7 +151,14 @@ body {
 
 .custom-select {
     width: 20%;
+
     
+}
+
+.custom-links {
+    text-decoration: none;
+    color: rgb(255, 183, 0);
+    font-weight: 300;
 }
 
 
@@ -143,6 +172,12 @@ body {
 
     .hero-img {
         display: none;
+    }
+
+    .card {
+        height: 6rem;
+        padding: 30px 15px;
+        
     }
 
 }

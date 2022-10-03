@@ -16,32 +16,34 @@
         </div>
     </div>
 
-    <table class="table">
-        <thead>
-            <tr>
-                
-                <th width="30%">Note Title</th>
-                <th width="10%" class="text-center">Total Words</th>
-                <th class="text-end" width="40%">Actions</th>
-            </tr>
-        </thead>
+    @foreach (var note in Model)
+    {
+        <div class="card container">
+            <div class="row">
+                <div class="col-1">
+                    <i class=" bi bi-square-fill" style="color: @note.TitleColor;"></i>
+                </div>
 
-        <tbody>
-            @foreach(var note in Model)
-            {
-                <tr>
-                    
-                    <td>@note.Title</td>
-                    <td class="text-center">
-                        @note.CalcLength().ToString()
-                    </td>
-                    <td class="text-end">
-                        <a asp-action="View" asp-controller="Notes" class="btn btn-light"><i class="bi bi-folder2-open"></i>&nbsp;View Note</a>
-                        <a asp-action="Edit" asp-controller="Notes" class="btn btn-light"><i class="bi bi-pen"></i>&nbsp;Edit Note</a>
-                    </td>
-                </tr>
-             }
-        </tbody>
-    </table>
+                <div class="col-5">
+                    <h6>Note Title: <span class="note-info">@note.Title</span></h6>
+                </div>
 
-</div>
+                <div class="col-3">
+                    <h6>Total Words: <span class="note-info">@note.CalcLength().ToString()</span></h6>
+                </div>
+
+                <div class="col-3 text-end">
+                    <p>
+                        
+                         <a asp-action="View" class="custom-links"><i class="bi bi-folder2-open"></i>&nbspView</a>
+                         <a asp-action="Edit" asp-controller="Notes" asp-route-id="@note.Id" style="margin-left:1rem" class="custom-links"><i class="bi bi-pencil"></i>&nbsp;Edit</a>
+                         
+                         
+                        
+                    </p>
+                </div>
+            </div>
+        </div>
+     }
+
+

@@ -13,7 +13,7 @@ namespace NotesApp.Models
 
         public void AddNewNote(Note note)
         {
-            note.CalcLength();
+            
             _context.Notes.Add(note);
             _context.SaveChanges();
         }
@@ -27,6 +27,20 @@ namespace NotesApp.Models
         {
             Note returnedNote = _context.Notes.Find(id);
             return returnedNote;
+        }
+
+        public void UpdateNote(Note note)
+        {
+            _context.Notes.Update(note);
+            _context.SaveChanges();
+
+        }
+
+        public void DeleteNote(Guid id)
+        {
+            var returnedFromDb = _context.Notes.Find(id);
+            _context.Notes.Remove(returnedFromDb);
+            _context.SaveChanges();
         }
     }
 }

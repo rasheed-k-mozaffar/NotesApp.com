@@ -42,6 +42,28 @@ namespace NotesApp.Controllers
             return View();
         }
 
+        [HttpGet]
+        public IActionResult Edit(Guid id)
+        {
+            var returnedFromDb = _repository.FindById(id);
+            if (returnedFromDb == null) return NotFound();
+            return View(returnedFromDb);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Note note)
+        {
+            _repository.UpdateNote(note);
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public IActionResult Delete(Guid id)
+        {
+            _repository.DeleteNote(id);
+            return RedirectToAction("Index");
+        }
+
 
     }
 }
