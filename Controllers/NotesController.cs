@@ -58,10 +58,17 @@ namespace NotesApp.Controllers
         }
 
         [HttpPost]
-        public IActionResult Delete(Guid id)
+        public IActionResult Delete(Note note)
         {
-            _repository.DeleteNote(id);
+            _repository.DeleteNote(note);
             return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public IActionResult View(Guid id)
+        {
+            var returnedNote = _repository.FindById(id);
+            return View(returnedNote);
         }
 
 

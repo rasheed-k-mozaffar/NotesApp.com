@@ -11,7 +11,7 @@ namespace NotesApp.Repos
         //Accessing a note and updating its current values
         void UpdateNote(Note note);
         //Remove a note from the db
-        void DeleteNote(Guid id);
+        void DeleteNote(Note note);
 
 
 

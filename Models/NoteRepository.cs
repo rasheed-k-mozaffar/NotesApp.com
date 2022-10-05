@@ -36,9 +36,9 @@ namespace NotesApp.Models
 
         }
 
-        public void DeleteNote(Guid id)
+        public void DeleteNote(Note note)
         {
-            var returnedFromDb = _context.Notes.Find(id);
+            var returnedFromDb = _context.Notes.Find(note.Id);
             _context.Notes.Remove(returnedFromDb);
             _context.SaveChanges();
         }

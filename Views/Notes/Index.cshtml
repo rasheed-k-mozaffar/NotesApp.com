@@ -18,7 +18,7 @@
 
     @foreach (var note in Model)
     {
-        <div class="card container">
+        <div class="card-custom container">
             <div class="row">
                 <div class="col-1">
                     <i class=" bi bi-square-fill" style="color: @note.TitleColor;"></i>
@@ -33,13 +33,9 @@
                 </div>
 
                 <div class="col-3 text-end">
-                    <p>
-                        
-                         <a asp-action="View" class="custom-links"><i class="bi bi-folder2-open"></i>&nbspView</a>
-                         <a asp-action="Edit" asp-controller="Notes" asp-route-id="@note.Id" style="margin-left:1rem" class="custom-links"><i class="bi bi-pencil"></i>&nbsp;Edit</a>
-                         
-                         
-                        
+                    <p>              
+                         <a asp-action="View" class="custom-links" asp-route-id="@note.Id"><i class="bi bi-folder2-open"></i>&nbspView</a>
+                         <a asp-action="Edit" asp-controller="Notes" asp-route-id="@note.Id" style="margin-left:1rem" class="custom-links"><i class="bi bi-pencil"></i>&nbsp;Edit</a>  
                     </p>
                 </div>
             </div>

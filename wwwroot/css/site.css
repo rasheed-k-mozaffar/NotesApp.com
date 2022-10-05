@@ -37,14 +37,14 @@ body {
 
 .navs {
     color: black;
-    transition: 0.15s;
+    transition: 0.05s;
     text-decoration: underline;
     font-weight: 100;
 }
 
 .navs:hover {
     color: white;
-    transform: scale(1.025);
+    
 
 }
 
@@ -91,17 +91,18 @@ body {
     font-weight: 400;
 }
 
-.card {
+.card-custom {
     height: 4rem;
     margin: auto;
     padding: 20px 15px;
     width: 100%;
     margin-bottom: 1rem;
+    border-radius: 15px;
     transition: .2s ease;
 }
-.card:hover {
+.card-custom:hover {
     transform: scale(1.015);
-    background-color: #eee;
+    background-color: #fff;
     
 }
 
@@ -174,10 +175,14 @@ body {
         display: none;
     }
 
-    .card {
+    .card-custom {
         height: 6rem;
         padding: 30px 15px;
         
+    }
+
+    .content-input {
+        width: 50ch;
     }
 
 }
